@@ -1,0 +1,17 @@
+# Example direnv configuration for reponest development
+# Copy this file to .envrc and customize as needed
+#
+# direnv is a shell extension that loads/unloads environment variables
+# based on the current directory. See https://direnv.net/
+
+# If using Nix flake (recommended)
+use flake
+
+# Alternative: Load environment variables from a .env file
+# dotenv
+
+# Custom environment variables for development
+# export RUST_LOG=debug
+
+# Set custom config path for testing
+# export REPONEST_CONFIG="$PWD/examples/config.toml"

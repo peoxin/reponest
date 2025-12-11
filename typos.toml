@@ -1,0 +1,13 @@
+# Typos configuration for reponest
+# See https://github.com/crate-ci/typos
+
+[default.extend-words]
+# Project-specific words that are not typos
+reponest = "reponest"
+clippy = "clippy"
+rustfmt = "rustfmt"
+tokio = "tokio"
+ratatui = "ratatui"
+crossterm = "crossterm"
+libgit2 = "libgit2"
+rayon = "rayon"

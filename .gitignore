@@ -1,0 +1,16 @@
+# Rust build artifacts
+/target
+
+# Direnv files
+.envrc
+.direnv
+
+# Test repositories
+test-repos/
+
+# tools cache
+cliff.toml.cache
+.typos.toml.cache
+
+# macOS system files
+.DS_Store

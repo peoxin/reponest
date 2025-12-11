@@ -1,0 +1,46 @@
+# This is an example configuration file for reponest.
+# Copy this file to one of the following locations and customize it as needed:
+#   - ~/.config/reponest/config.toml (Linux/macOS)
+#   - ~/Library/Application Support/reponest/config.toml (macOS)
+#   - %APPDATA%\reponest\config.toml (Windows)
+#
+# All settings are optional. If omitted, default values will be used.
+# CLI arguments will override values specified in this file.
+
+[main]
+# Directories to scan for git repositories
+# Default: [home directory]
+scan_dirs = ["~/Projects", "~/workspace"]
+
+# Maximum depth for directory scanning
+# 0 means unlimited depth (not recommended for large filesystems)
+# Default: 5
+max_depth = 5
+
+[ui]
+# TUI theme
+# Default: "default"
+theme = "default"
+
+# Key bindings for TUI
+[ui.keybindings]
+# Quit the application
+quit = ["q"]
+
+# Move selection up
+move_up = ["k", "Up"]
+
+# Move selection down
+move_down = ["j", "Down"]
+
+# View repository details
+details = ["l", "Right"]
+
+# Go back from details view
+back = ["Esc"]
+
+# Change directory to selected repository (requires shell wrapper)
+cd = ["o"]
+
+# Open repository in file manager
+open = ["O", "Enter"]

@@ -1,0 +1,54 @@
+# Pre-commit hooks configuration
+# See https://pre-commit.com for more information
+
+repos:
+  # General file checks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-toml
+      - id: check-added-large-files
+        args: [--maxkb=1000]
+      - id: check-merge-conflict
+      - id: mixed-line-ending
+
+  # Spell checking
+  - repo: https://github.com/crate-ci/typos
+    rev: v1.40.0
+    hooks:
+      - id: typos
+        args: []
+
+  - repo: local
+    hooks:
+      # Rust formatting
+      - id: cargo-fmt
+        name: cargo fmt
+        description: Format Rust code with rustfmt
+        entry: cargo fmt --all -- --check
+        language: system
+        types: [rust]
+        pass_filenames: false
+
+      # Rust linting
+      - id: cargo-clippy
+        name: cargo clippy
+        description: Lint Rust code with clippy
+        entry: cargo clippy --all-features --workspace -- -D warnings
+        language: system
+        types: [rust]
+        pass_filenames: false
+
+      # Dependency checks
+      - id: cargo-deny
+        name: cargo deny
+        description: Check dependencies for security and license issues
+        entry: cargo deny check
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-push]

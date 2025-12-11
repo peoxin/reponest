@@ -1,0 +1,12 @@
+# Rustfmt configuration for reponest
+# See https://rust-lang.github.io/rustfmt/ for all options
+
+edition = "2024"
+style_edition = "2024"
+
+# Number of spaces per tab
+tab_spaces = 4
+# Maximum width of each line
+max_width = 100
+# Use tab characters for indentation, spaces for alignment
+hard_tabs = false
